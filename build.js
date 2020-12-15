@@ -19,7 +19,7 @@ if (process.platform === 'linux') {
   targets.push('src/tools/linux/dump_syms/dump_syms')
 }
 if (process.platform === 'darwin') {
-  targets.push('src/tools/mac/dump_syms/dump_syms')
+  targets.push('src/tools/mac/dump_syms/dump_syms_tool')
 }
 
 spawnSync('make', ['-C', buildDir, '-j', require('os').cpus().length, ...targets], {
