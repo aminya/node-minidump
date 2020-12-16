@@ -1,8 +1,8 @@
 {
   "main": "./lib/minidump.js",
-  "name": "@aminya/minidump",
+  "name": "minidump",
   "description": "Read and process minidump file",
-  "version": "0.19.0-7",
+  "version": "0.19.0",
   "bin": {
     "minidump_stackwalk": "build/src/processor/minidump_stackwalk",
     "minidump_dump": "build/src/processor/minidump_dump"
@@ -11,16 +11,16 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aminya/node-minidump.git"
+    "url": "https://github.com/electron/node-minidump.git"
   },
   "bugs": {
-    "url": "https://github.com/aminya/node-minidump/issues"
+    "url": "https://github.com/electron/node-minidump/issues"
   },
   "scripts": {
     "test": "mocha test && standard",
     "build": "node build.js",
     "submodule": "git submodule update --recursive --init",
-    "prepare": "npm run submodule && npm run build",
+    "prepublishOnly": "npm run submodule && npm run build",
     "postinstall": "npm run build"
   },
   "devDependencies": {
