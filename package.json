@@ -18,7 +18,10 @@
   },
   "scripts": {
     "test": "mocha test && standard",
-    "preinstall": "node build.js"
+    "build": "node build.js",
+    "submodule": "git submodule update --recursive --init",
+    "prepublishOnly": "npm run submodule && npm run build",
+    "postinstall": "npm run build"
   },
   "devDependencies": {
     "electron-download": "^3.0.1",
