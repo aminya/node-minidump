@@ -20,13 +20,15 @@
     "test": "mocha test && standard",
     "build": "node build.js",
     "submodule": "git submodule update --recursive --init",
-    "prepublishOnly": "npm run submodule && npm run build",
+    "prepublishOnly": "npm run submodule && npm run build && npm run permission",
+    "permission": "shx chmod -R +x ./bin",
     "postinstall": "npm run build"
   },
   "devDependencies": {
     "electron-download": "^3.0.1",
     "extract-zip": "^1.5.0",
     "mocha": "^3.1.2",
+    "shx": "^0.3.3",
     "standard": "^8.4.0",
     "temp": "^0.8.3"
   },
